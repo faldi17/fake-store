@@ -1,16 +1,84 @@
-# fake_store
+# 🛍️ Fake Store App
 
-A new Flutter project.
+A simple **Flutter e-commerce app** that fetches products from [Fake Store API](https://fakestoreapi.com) and displays them in a modern grid layout.
+This project demonstrates **basic API integration**, **async data fetching**, and **responsive UI** in Flutter.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+* Fetch and display product list from API
+* Responsive grid view layout
+* Product image, title, and price display
+* Simple state management with `FutureBuilder`
+* Loading and empty state handling
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📸 App Preview
+
+Here’s how the app looks:
+
+![App Screenshot](./screenshot/Screenshot1.png)
+
+---
+
+## ⚙️ Tech Stack
+
+* **Flutter** (Dart)
+* **HTTP package** for API calls
+* **Material 3** design system
+
+---
+
+## 🧩 Project Structure
+
+```
+lib/
+ ├── constant/
+ │   └── constant.dart       # Base URL and API constants
+ ├── screens/
+ │   └── home_screen.dart    # Main screen that displays product grid
+ └── main.dart               # App entry point
+```
+
+---
+
+## 🧠 Learnings
+
+* How to integrate REST API in Flutter
+* How to use `FutureBuilder` for async UI
+* How to build grid-based product layouts
+
+---
+
+## ▶️ Getting Started
+
+To run this project locally:
+
+```bash
+# Clone this repository
+git clone https://github.com/faldi17/fake-store.git
+
+# Move into the project directory
+cd fake-store
+
+# Get dependencies
+flutter pub get
+
+# Run the app
+flutter run
+```
+
+---
+
+## 🌐 API Reference
+
+Data powered by [Fake Store API](https://fakestoreapi.com)
+
+Base URL:
+
+```dart
+const kBaseUrl = "https://fakestoreapi.com";
+const kProductUrl = "$kBaseUrl/products";
+```
