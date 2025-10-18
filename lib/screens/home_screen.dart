@@ -1,11 +1,10 @@
 import 'dart:convert';
-
 import 'package:fake_store/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -29,24 +28,24 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Fake Store"),
+        title: const Text("My Fake Store"),
       ),
       body: FutureBuilder<List>(
         future: _getProduct(),
         builder: (context, snapshot) {
-          // koneksi ke internet
+          // connect to internet
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
           if (snapshot.data == null) {
-            return Center(
+            return const Center(
               child: Text("Tidak Ada Data"),
             );
           }
           if (snapshot.data!.isEmpty) {
-            return Center(
+            return const Center(
               child: Text("Data Kosong"),
             );
           }
@@ -67,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Container(
                           height: 120,
                           width: double.infinity,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                           ),
                           child: Image.network(
@@ -76,14 +75,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 100,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Text(
                           "${product['title']}",
                           maxLines: 2,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Row(
@@ -92,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text("\$${product['price']}"),
                             IconButton(
                               onPressed: () {},
-                              icon: Icon(Icons.favorite_border),
+                              icon: const Icon(Icons.favorite_border),
                             ),
                           ],
                         ),
@@ -102,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               );
             },
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 0.7,
             ),
@@ -111,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.refresh),
+        child: const Icon(Icons.refresh),
       ),
     );
   }
